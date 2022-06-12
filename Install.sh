@@ -29,6 +29,6 @@ download(){ case "$N" in
 $B  最新版本：$G$NEWNAME$C ($NEWVER)$O
 
   开始下载";mkdir "$DIR";curl "$URL/Main.sh">"$DIR/Main.sh"||abort_update "下载失败";[ "$(md5sum "$DIR/Main.sh"|head -c 32)" != "$MD5" ]&&abort_update "下载文件校验错误";echo "bash '$DIR/Main.sh'">"$PREFIX/bin/tsob"||abort "脚本执行命令$PREFIX/bin/tsob设置失败";chmod 755 "$PREFIX/bin/tsob"||abort "脚本权限设置失败";echo "
-$G- 脚本安装完成，输入tsob执行$O";exit;}
+$G- 脚本安装完成，输入tsob执行$O";rm -rf "$0";exit;}
 echo "
 $Y- 正在下载脚本$O";N=1;download
