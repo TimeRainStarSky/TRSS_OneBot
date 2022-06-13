@@ -1,5 +1,5 @@
 #TRSS_OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=20220613
+NAME=v1.0.0;VERSION=202206130
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -8,11 +8,12 @@ $B——————————————————————————
       ${G}作者：${C}时雨🌌星空$O"
 abort(){ echo "
 $R! $@$O";exit 1;}
+DIR="$HOME/TRSS_OneBot"
 command -v apt &>/dev/null&&echo "
 $Y- 正在安装依赖$O
-"||abort "找不到apt命令，请确认安装了正确的Termux环境"
-DIR="$HOME/TRSS_OneBot"
-sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.bfsu.edu.cn/termux/apt/termux-main stable main@' "$PREFIX/etc/apt/sources.list"&&apt update -y&&apt upgrade -y&&apt install -y curl nano tmux tsu whiptail||abort "依赖安装失败"
+"||abort "找不到apt命令，请确认安装环境"
+#sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.bfsu.edu.cn/termux/apt/termux-main stable main@' "$PREFIX/etc/apt/sources.list"
+apt update -y&&apt upgrade -y&&apt install -y curl nano tmux tsu whiptail||abort "依赖安装失败"
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt "8" ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
 download(){ case "$N" in
