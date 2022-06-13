@@ -12,7 +12,7 @@ command -v apt &>/dev/null&&echo "
 $Y- 正在安装依赖$O
 "||abort "找不到apt命令，请确认安装了正确的Termux环境"
 DIR="$HOME/TRSS_OneBot"
-sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.bfsu.edu.cn/termux/apt/termux-main stable main@' "$PREFIX/etc/apt/sources.list";apt update -y;apt install -y curl nano tmux tsu whiptail
+sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirror.nju.edu.cn/termux/apt/termux-main stable main@' "$PREFIX/etc/apt/sources.list";apt update -y;apt install -y curl nano tmux tsu whiptail
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt "8" ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
 download(){ case "$N" in
