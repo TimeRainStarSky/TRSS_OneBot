@@ -8,11 +8,11 @@ $B——————————————————————————
       ${G}作者：${C}时雨🌌星空$O"
 abort(){ echo "
 $R! $@$O";exit 1;}
-command -v pkg &>/dev/null&&echo "
+command -v apt &>/dev/null&&echo "
 $Y- 正在安装依赖$O
-"||abort "找不到pkg命令，请确认安装了正确的Termux环境"
+"||abort "找不到apt命令，请确认安装了正确的Termux环境"
 DIR="$HOME/TRSS_OneBot"
-sed -i 's@packages.termux.org@mirrors.ustc.edu.cn/termux@' "$PREFIX/etc/apt/sources.list";pkg up -y;pkg i -y curl nano tmux tsu whiptail
+sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.bfsu.edu.cn/termux/apt/termux-main stable main@' "$PREFIX/etc/apt/sources.list";apt update -y;apt install -y curl nano tmux tsu whiptail
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt "8" ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
 download(){ case "$N" in
