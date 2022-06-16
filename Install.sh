@@ -1,5 +1,5 @@
 #TRSS_OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202206130
+NAME=v1.0.0;VERSION=202206160
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -12,7 +12,7 @@ DIR="$HOME/TRSS_OneBot"
 command -v pkg &>/dev/null&&echo "
 $Y- 正在安装依赖$O
 "||abort "找不到pkg命令，请确认安装了正确的Termux环境"
-#sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.bfsu.edu.cn/termux/apt/termux-main stable main@' "$PREFIX/etc/apt/sources.list"
+sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.ustc.edu.cn/termux/apt/termux-main stable main@' "$PREFIX/etc/apt/sources.list"
 pkg up -y&&pkg i -y curl nano perl tmux tsu whiptail||abort "依赖安装失败"
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt "8" ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
