@@ -19,7 +19,7 @@ $R! $@$O";[ "$N" -lt "8" ]&&{ let N++;download;}||abort "脚本下载失败，�
 download(){ case "$N" in
   "2")SERVER="GitHub";URL="https://raw.githubusercontent.com/TimeRainStarSky/TRSS_OneBot/main";;
   "1")SERVER="Gitee";URL="https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main";;
-  "3")SERVER="Gitle";URL="http://git.nbxianyuyun.cn:3000/TimeRainStarSky/TRSS_OneBot/raw/branch/main";;
+  "3")SERVER="Agit";URL="https://agit.ai/TimeRainStarSky/TRSS_OneBot/raw/branch/main";;
   "4")SERVER="GitLab";URL="https://gitlab.com/TimeRainStarSky/TRSS_OneBot/raw/main";;
   "5")SERVER="Coding";URL="https://trss.coding.net/p/TRSS_OneBot/d/TRSS_OneBot/git/raw/main";;
   "6")SERVER="Aliyun";URL="https://code.aliyun.com/TimeRainStarSky/TRSS_OneBot/raw/main";;
