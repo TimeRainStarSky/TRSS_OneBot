@@ -17,7 +17,7 @@ terminal-onclick-url-open=true
 terminal-margin-vertical=0
 terminal-margin-horizo​​ntal=0">~/.termux/termux.properties;termux-reload-settings
 sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.ustc.edu.cn/termux/apt/termux-main stable main@' "$PREFIX/etc/apt/sources.list"
-pkg up -y&&pkg i -y curl nano perl tmux tsu whiptail||abort "依赖安装失败"
+pkg up -y&&pkg i -y curl dnsutils nano perl tmux tsu whiptail||abort "依赖安装失败"
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt "8" ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
 download(){ case "$N" in
