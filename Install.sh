@@ -1,5 +1,5 @@
 #TRSS_OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202206240
+NAME=v1.0.0;VERSION=202206230
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -16,7 +16,7 @@ echo "extra-keys = [ ['ESC','<','>','BACKSLASH','=','^','$','()','{}','[]','ENTE
 terminal-onclick-url-open=true
 terminal-margin-vertical=0
 terminal-margin-horizo​​ntal=0">~/.termux/termux.properties;termux-reload-settings
-ln -sf "$PREFIX/etc/termux/mirrors/china" "$PREFIX/etc/termux/chosen_mirrors"
+sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.ustc.edu.cn/termux/apt/termux-main stable main@' "$PREFIX/etc/apt/sources.list"
 pkg up -y&&pkg i -y curl dnsutils nano perl tmux tsu whiptail||abort "依赖安装失败"
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt "8" ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
