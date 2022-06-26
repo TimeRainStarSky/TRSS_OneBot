@@ -1,5 +1,5 @@
 #TRSS_OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202206230
+NAME=v1.0.0;VERSION=202206260
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -15,7 +15,33 @@ $Y- 正在安装依赖$O
 echo "extra-keys = [ ['ESC','<','>','BACKSLASH','=','^','$','()','{}','[]','ENTER'], ['TAB','&',';','/','~','%','*','HOME','UP','END','PGUP'], ['CTRL','FN','ALT','|','-','+','QUOTE','LEFT','DOWN','RIGHT','PGDN'] ]
 terminal-onclick-url-open=true
 terminal-margin-vertical=0
-terminal-margin-horizo​​ntal=0">~/.termux/termux.properties;termux-reload-settings
+terminal-margin-horizo​​ntal=0">~/.termux/termux.properties
+echo "foreground=#c5c8c6
+background=#000000
+cursor=#c5c8c6
+color0=#1d1f21
+color1=#CC342B
+color2=#198844
+color3=#FBA922
+color4=#3971ED
+color5=#A36AC7
+color6=#3971ED
+color7=#c5c8c6
+color8=#969896
+color9=#CC342B
+color10=#198844
+color11=#FBA922
+color12=#3971ED
+color13=#A36AC7
+color14=#3971ED
+color15=#ffffff
+color16=#F96A38
+color17=#3971ED
+color18=#282a2e
+color19=#373b41
+color20=#b4b7b4
+color21=#e0e0e0">~/.termux/colors.properties
+termux-reload-settings
 sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.ustc.edu.cn/termux/apt/termux-main stable main@' "$PREFIX/etc/apt/sources.list"
 pkg up -y&&pkg i -y curl dnsutils nano perl tmux tsu whiptail||abort "依赖安装失败"
 abort_update(){ echo "
