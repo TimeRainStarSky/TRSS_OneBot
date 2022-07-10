@@ -1,5 +1,5 @@
 #TRSS_OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202206260
+NAME=v1.0.0;VERSION=202207100
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -7,7 +7,7 @@ $R TRSS$Y OneBot$G Install$C Script$O
 $B————————————————————————————
       ${G}作者：${C}时雨🌌星空$O"
 abort(){ echo "
-$R! $@$O";exit 1;}
+$R! $@$O";rm -rf "$0";exit 1;}
 DIR="$HOME/TRSS_OneBot"
 command -v pkg &>/dev/null&&echo "
 $Y- 正在安装依赖$O

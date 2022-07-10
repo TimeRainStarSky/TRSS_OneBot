@@ -1,6 +1,6 @@
 # TRSS OneBot 一个QQ机器人管理脚本
 [![Stars](https://img.shields.io/github/stars/TimeRainStarSky/TRSS_OneBot?color=yellow&label=收藏)](https://github.com/TimeRainStarSky/TRSS_OneBot/stargazers)
-[![Downloads](https://img.shields.io/github/downloads/TimeRainStarSky/TRSS_OneBot/total?color=blue&label=下载)](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@main/Install.sh)
+[![Downloads](https://img.shields.io/github/downloads/TimeRainStarSky/TRSS_OneBot/total?color=blue&label=下载)](https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install.sh)
 [![Releases](https://img.shields.io/github/v/release/TimeRainStarSky/TRSS_OneBot?color=green&label=发布版本)](https://github.com/TimeRainStarSky/TRSS_OneBot/releases/latest)  
 [![访问量](https://profile-counter.glitch.me/TimeRainStarSky-TRSS_OneBot/count.svg)](https://timerainstarsky.github.io/TRSS_OneBot)
 
@@ -9,7 +9,7 @@
 
 2. 安装：
 ```
-curl -LO "https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@main/Install.sh" && bash Install.sh
+curl -LO "https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install.sh" && bash Install.sh
 ```
 
 ## 使用说明
