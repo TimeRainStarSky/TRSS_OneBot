@@ -11,6 +11,7 @@
 ```
 curl -LO "https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install.sh" && bash Install.sh
 ```
+视频教程：https://b23.tv/av983453309
 
 ## 使用说明
 - ZeroBot <-WS连接-> go-cqhttp <-网络连接-> QQ服务器
