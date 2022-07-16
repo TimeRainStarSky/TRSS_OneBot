@@ -33,3 +33,9 @@ curl -LO "https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install.sh" && 
 - 酷安：[时雨丶星空](http://www.coolapk.com/u/2650948)
 - QQ：[2536554304](https://qm.qq.com/cgi-bin/qm/qr?k=x8LtlP8vwZs7qLwmsbCsyLoAHy7Et1Pj)
 - Telegram：[TimeRainStarSky](https://t.me/TimeRainStarSky)
+
+## 界面展示
+[![主界面](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@main/Picture/Main.png)](https://github.com/TimeRainStarSky/TRSS_OneBot)
+[![go-cqhttp](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@main/Picture/go-cqhttp.png)](https://docs.go-cqhttp.org)
+[![ZeroBot-Plugin](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@main/Picture/ZeroBot-Plugin.png)](https://github.com/FloatTech/ZeroBot-Plugin)
+[![PaimengBot](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@main/Picture/PaimengBot.png)](https://richeyjang.github.io/PaimengBot)
