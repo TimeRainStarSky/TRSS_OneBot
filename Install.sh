@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202207100
+NAME=v1.0.0;VERSION=202207170
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -11,7 +11,7 @@ $R! $@$O";rm -rf "$0";exit 1;}
 DIR="$HOME/TRSS_OneBot"
 command -v pkg &>/dev/null&&echo "
 $Y- 正在安装依赖$O
-"||abort "找不到pkg命令，请确认安装了正确的Termux环境"
+"||abort "找不到 pkg 命令，请确认安装了正确的 Termux 环境"
 echo "extra-keys = [ ['ESC','<','>','BACKSLASH','=','^','$','()','{}','[]','ENTER'], ['TAB','&',';','/','~','%','*','HOME','UP','END','PGUP'], ['CTRL','FN','ALT','|','-','+','QUOTE','LEFT','DOWN','RIGHT','PGDN'] ]
 terminal-onclick-url-open=true
 terminal-margin-vertical=0
