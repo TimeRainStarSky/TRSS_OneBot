@@ -11,6 +11,9 @@
 ```
 curl -LO "https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install.sh" && bash Install.sh
 ```
+
+3. 启动：`tsob`
+
 视频教程：https://b23.tv/av983453309
 
 ## 使用说明
