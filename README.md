@@ -44,3 +44,7 @@ curl -LO "https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install.sh" && 
 [![go-cqhttp](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@main/Picture/go-cqhttp.png)](https://docs.go-cqhttp.org)
 [![ZeroBot-Plugin](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@main/Picture/ZeroBot-Plugin.png)](https://github.com/FloatTech/ZeroBot-Plugin)
 [![PaimengBot](https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@main/Picture/PaimengBot.png)](https://richeyjang.github.io/PaimengBot)
+
+## 赞助支持
+- 爱发电：<https://afdian.net/@TimeRainStarSky>
+- Partme：<https://partme.com/TimeRainStarSky>
