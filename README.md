@@ -17,9 +17,9 @@ curl -LO "https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install.sh" && 
 视频教程：https://b23.tv/av983453309
 
 ## 使用说明
-- ZeroBot <-WS连接-> go-cqhttp <-网络连接-> QQ服务器
-- go-cqhttp：提供QQ账号管理，收发消息等功能
-- ZeroBot：对消息进行处理，完成目标操作
+- [ZeroBot](https://github.com/wdvxdr1123/ZeroBot) <-WS连接-> [go-cqhttp](https://docs.go-cqhttp.org) <-网络连接-> [QQ服务器](https://im.qq.com)
+- [go-cqhttp](https://docs.go-cqhttp.org)：提供QQ账号管理，收发消息等功能
+- [ZeroBot](https://github.com/wdvxdr1123/ZeroBot)：对消息进行处理，完成目标操作
 
 ## 常见问题
 - 问：无法连接到 WebSocket 服务器
