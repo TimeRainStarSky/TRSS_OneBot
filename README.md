@@ -5,7 +5,7 @@
 [![访问量](https://profile-counter.glitch.me/TimeRainStarSky-TRSS_OneBot/count.svg)](https://timerainstarsky.github.io/TRSS_OneBot)
 
 ## 使用教程
-1. 准备：[Termux](https://github.com/hanxinhao000/ZeroTermux)
+1. 准备：[Termux arm64](https://github.com/hanxinhao000/ZeroTermux)
 
 2. 安装：
 ```
@@ -14,7 +14,7 @@ curl -LO "https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install.sh" && 
 
 3. 启动：`tsob`
 
-视频教程：https://b23.tv/av983453309
+视频教程：<https://b23.tv/av983453309>
 
 ## 使用说明
 - [ZeroBot](https://github.com/wdvxdr1123/ZeroBot) <-WS连接-> [go-cqhttp](https://docs.go-cqhttp.org) <-网络连接-> [QQ服务器](https://im.qq.com)
@@ -22,6 +22,9 @@ curl -LO "https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install.sh" && 
 - [ZeroBot](https://github.com/wdvxdr1123/ZeroBot)：对消息进行处理，完成目标操作
 
 ## 常见问题
+- 问：发消息错误：46
+- 答：账号被风控
+
 - 问：无法连接到 WebSocket 服务器
 - 答：请确认 go-cqhttp 正常运行并启动了 CQ WebSocket 服务器
 
