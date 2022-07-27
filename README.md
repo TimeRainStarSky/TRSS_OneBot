@@ -29,7 +29,7 @@ curl -LO "https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install.sh" && 
 - 答：请确认 go-cqhttp 正常运行并启动了 CQ WebSocket 服务器
 
 - 问：address already in use
-- 答：WebSocket 端口被占用，请尝试停止占用进程、重启设备，或修改配置文件，更换 WebSocket 端口
+- 答：WebSocket 端口被占用，请尝试停止占用进程、重启设备，或修改配置文件，更改 WebSocket 端口
 
 - 问：我有其他问题
 - 答：提供详细问题描述，通过下方 联系方式 反馈问题
