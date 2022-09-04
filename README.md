@@ -15,7 +15,7 @@ ZeroBot机器人管理脚本
 
 ## 使用教程
 1. 准备：[Linux](https://kernel.org) 或 [Termux](https://github.com/termux/termux-app)
-- [Termux arm64](https://github.com/termux/termux-app) 专用版本见 [main 分支](../main)
+- [Termux arm64](https://github.com/termux/termux-app) 专用版本见 [main 分支](../../tree/main)
 
 2. 安装：
 ```
