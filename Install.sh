@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202209040
+NAME=v1.0.0;VERSION=202209230
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -9,15 +9,15 @@ $B——————————————————————————
 abort(){ echo "
 $R! $@$O";exit 1;}
 DIR="$HOME/TRSS_OneBot"
-if command -v curl micro neofetch perl tmux whiptail &>/dev/null;then
+if which curl micro neofetch perl tmux whiptail &>/dev/null;then
   echo "
 $G- 依赖已安装完成$O"
-elif command -v pacman &>/dev/null;then
+elif which pacman &>/dev/null;then
   echo "
 $Y- 正在使用 pacman 安装依赖$O
 "
   pacman -Syu --noconfirm --needed --overwrite "*" curl libnewt micro neofetch perl tmux||abort "依赖安装失败"
-elif command -v pkg &>/dev/null;then
+elif which pkg &>/dev/null;then
   echo "extra-keys = [ ['ESC','<','>','BACKSLASH','=','^','$','()','{}','[]','ENTER'], ['TAB','&',';','/','~','%','*','HOME','UP','END','PGUP'], ['CTRL','FN','ALT','|','-','+','QUOTE','LEFT','DOWN','RIGHT','PGDN'] ]
 terminal-onclick-url-open=true
 terminal-margin-vertical=0
@@ -51,7 +51,7 @@ termux-reload-settings
 $Y- 正在使用 pkg 安装依赖$O
 "
   pkg up -y&&pkg i -y curl micro neofetch perl tmux tsu whiptail||abort "依赖安装失败"
-elif command -v apt &>/dev/null;then
+elif which apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
 "
