@@ -16,48 +16,18 @@ elif which pacman &>/dev/null;then
   echo "
 $Y- 正在使用 pacman 安装依赖$O
 "
-  pacman -Syu --noconfirm --needed --overwrite "*" curl libnewt micro neofetch perl tmux||abort "依赖安装失败"
-elif which pkg &>/dev/null;then
-  echo "extra-keys = [ ['ESC','<','>','BACKSLASH','=','^','$','()','{}','[]','ENTER'], ['TAB','&',';','/','~','%','*','HOME','UP','END','PGUP'], ['CTRL','FN','ALT','|','-','+','QUOTE','LEFT','DOWN','RIGHT','PGDN'] ]
-terminal-onclick-url-open=true
-terminal-margin-vertical=0
-terminal-margin-horizo​​ntal=0">~/.termux/termux.properties&&echo "foreground=#c5c8c6
-background=#000000
-cursor=#c5c8c6
-color0=#1d1f21
-color1=#CC342B
-color2=#198844
-color3=#FBA922
-color4=#3971ED
-color5=#A36AC7
-color6=#3971ED
-color7=#c5c8c6
-color8=#969896
-color9=#CC342B
-color10=#198844
-color11=#FBA922
-color12=#3971ED
-color13=#A36AC7
-color14=#3971ED
-color15=#ffffff
-color16=#F96A38
-color17=#3971ED
-color18=#282a2e
-color19=#373b41
-color20=#b4b7b4
-color21=#e0e0e0">~/.termux/colors.properties
-termux-reload-settings
-  echo "
-$Y- 正在使用 pkg 安装依赖$O
-"
-  pkg up -y&&pkg i -y curl micro neofetch perl tmux tsu whiptail||abort "依赖安装失败"
+  pacman -Syu --noconfirm --needed --overwrite "*" curl libnewt micro neofetch perl ranger tmux||abort "依赖安装失败"
 elif which apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
 "
-  apt update&&apt install curl micro neofetch perl tmux whiptail||abort "依赖安装失败"
-else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl micro neofetch perl tmux whiptail 后重试"
+  apt update&&apt install curl micro neofetch perl ranger tmux whiptail||abort "依赖安装失败"
+else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl micro neofetch perl ranger tmux whiptail 后重试"
 fi
+which locale-gen &>/dev/null&&{ echo "
+$Y- 正在设置语言$O
+"
+sed -i 's/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen&&locale-gen||abort "语言设置失败";}
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt 10 ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
 download(){ case "$N" in
