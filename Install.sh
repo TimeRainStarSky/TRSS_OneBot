@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202209240
+NAME=v1.0.0;VERSION=202209260
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -27,7 +27,7 @@ fi
 which locale-gen &>/dev/null&&{ echo "
 $Y- 正在设置语言$O
 "
-sed -i 's/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen&&locale-gen||abort "语言设置失败";}
+sed -i 's/#.*zh_CN\.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen&&locale-gen||abort "语言设置失败";}
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt 10 ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
 download(){ case "$N" in
