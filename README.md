@@ -30,6 +30,12 @@ bash <(curl -L https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux/Install.s
 - [ZeroBot](https://github.com/wdvxdr1123/ZeroBot) <-WS连接-> [go-cqhttp](https://docs.go-cqhttp.org) <-网络连接-> [QQ服务器](https://im.qq.com)
 - [go-cqhttp](https://docs.go-cqhttp.org)：提供QQ账号管理，收发消息等功能
 - [ZeroBot](https://github.com/wdvxdr1123/ZeroBot)：对消息进行处理，完成目标操作
+- Dialog 对话框：支持 触屏 / 鼠标 操作的交互式对话框
+- [Tmux 终端复用器](https://github.com/tmux/tmux)：支持 触屏 / 鼠标 操作的交互式终端会话
+- [Micro 文本编辑器](https://micro-editor.github.io)：支持 触屏 / 鼠标 操作的终端文本编辑器
+- [Ranger 文件管理器](https://ranger.github.io)：支持 触屏 / 鼠标 操作的终端文件管理器
+- 滚动更新：实时更新到最新版本，修复已知问题并添加更多功能
+- 更多功能等待你来提出……
 
 ## 常见问题
 - 问：发消息错误：46
