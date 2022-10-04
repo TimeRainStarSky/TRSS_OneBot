@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202210030
+NAME=v1.0.0;VERSION=202210040
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -9,22 +9,22 @@ $B——————————————————————————
 abort(){ echo "
 $R! $@$O";exit 1;}
 DIR="$HOME/TRSS_OneBot"
-if which curl dialog micro neofetch perl ranger tmux &>/dev/null;then
+if type curl dialog micro neofetch perl ranger tmux &>/dev/null;then
   echo "
 $G- 依赖已安装$O"
-elif which pacman &>/dev/null;then
+elif type pacman &>/dev/null;then
   echo "
 $Y- 正在使用 pacman 安装依赖$O
 "
   pacman -Syu --noconfirm --needed --overwrite "*" curl dialog micro neofetch perl ranger tmux||abort "依赖安装失败"
-elif which apt &>/dev/null;then
+elif type apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
 "
   apt update&&apt install -y curl dialog micro neofetch perl ranger tmux||abort "依赖安装失败"
 else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog micro neofetch perl ranger tmux 后重试"
 fi
-which locale-gen &>/dev/null&&{ echo "
+type locale-gen &>/dev/null&&{ echo "
 $Y- 正在设置语言$O
 "
 sed -i 's/#.*zh_CN\.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen&&locale-gen||abort "语言设置失败";}
