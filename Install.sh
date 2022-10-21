@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202210140
+NAME=v1.0.0;VERSION=202210210
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -19,6 +19,11 @@ elif type pacman &>/dev/null;then
 $Y- 正在使用 pacman 安装依赖$O
 "
   pacman -Syu --noconfirm --needed --overwrite "*" curl dialog tmux perl micro ranger neofetch htop nethogs ncdu||abort "依赖安装失败"
+elif type pkg &>/dev/null;then
+  echo "
+$Y- 正在使用 pkg 安装依赖$O
+"
+  pkg update&&pkg install -y curl dialog tmux perl micro ranger neofetch htop ncdu||abort "依赖安装失败"
 elif type apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
