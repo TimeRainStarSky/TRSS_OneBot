@@ -28,7 +28,7 @@ elif type apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
 "
-  apt update&&apt install -y curl dialog tmux perl micro ranger fastfetch htop nethogs ncdu||abort "依赖安装失败"
+  apt update&&apt install -y curl dialog tmux perl micro ranger htop nethogs ncdu||abort "依赖安装失败"
 else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog tmux perl micro 后重试"
 fi
 type locale-gen &>/dev/null&&{ echo "
