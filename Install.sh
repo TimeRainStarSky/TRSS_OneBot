@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202210260
+NAME=v1.0.0;VERSION=202210280
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -23,6 +23,10 @@ elif type pkg &>/dev/null;then
   echo "
 $Y- 正在使用 pkg 安装依赖$O
 "
+  [ -d ~/.termux ]&&echo "extra-keys = [ ['ESC','<','>','BACKSLASH','=','^','$','()','{}','[]','ENTER'], ['TAB','&',';','/','~','%','*','HOME','UP','END','PGUP'], ['CTRL','FN','ALT','|','-','+','QUOTE','LEFT','DOWN','RIGHT','PGDN'] ]
+terminal-onclick-url-open=true
+terminal-margin-vertical=0
+terminal-margin-horizo​​ntal=0">~/.termux/termux.properties&&termux-reload-settings
   pkg update&&pkg install -y curl dialog tmux perl micro ranger fastfetch htop ncdu||abort "依赖安装失败"
 elif type apt &>/dev/null;then
   echo "
