@@ -8,7 +8,7 @@ $B——————————————————————————
       ${G}作者：${C}时雨🌌星空$O"
 abort(){ echo "
 $R! $@$O";exit 1;}
-DIR="$HOME/TRSS_OneBot"
+DIR="${DIR:-$HOME/TRSS_OneBot}"
 CMD="${CMD:-tsob}"
 CMDPATH="${CMDPATH:-${PREFIX:-/usr/local}/bin}"
 if type curl dialog tmux perl micro &>/dev/null;then
