@@ -23,7 +23,7 @@ ZeroBot 机器人管理脚本
 2. 安装：
 
 ```
-bash <(curl -L https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux/Install.sh)
+bash <(curl -L gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux/Install.sh)
 ```
 
 3. 启动：`tsob`
@@ -37,7 +37,7 @@ bash <(curl -L https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux/Install.s
 举例：将脚本安装至 `/Bot` 启动命令 `trss`
 
 ```
-DIR=/Bot CMD=trss bash xxx
+DIR=/Bot CMD=trss bash <(x
 ```
 
 </details>
