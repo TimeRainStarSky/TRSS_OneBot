@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202210280
+NAME=v1.0.0;VERSION=202211080
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -26,7 +26,31 @@ $Y- 正在使用 pkg 安装依赖$O
   [ -d ~/.termux ]&&echo "extra-keys = [ ['ESC','<','>','BACKSLASH','=','^','$','()','{}','[]','ENTER'], ['TAB','&',';','/','~','%','*','HOME','UP','END','PGUP'], ['CTRL','FN','ALT','|','-','+','QUOTE','LEFT','DOWN','RIGHT','PGDN'] ]
 terminal-onclick-url-open=true
 terminal-margin-vertical=0
-terminal-margin-horizo​​ntal=0">~/.termux/termux.properties&&termux-reload-settings
+terminal-margin-horizo​​ntal=0">~/.termux/termux.properties&&echo "foreground=#C5C8C6
+background=#000000
+cursor=#C5C8C6
+color0=#1D1F21
+color1=#CC342B
+color2=#198844
+color3=#FBA922
+color4=#16B1FB
+color5=#A36AC7
+color6=#3971ED
+color7=#C5C8C6
+color8=#969896
+color9=#CC342B
+color10=#198844
+color11=#FBA922
+color12=#16B1FB
+color13=#A36AC7
+color14=#3971ED
+color15=#FFFFFF
+color16=#F96A38
+color17=#3971ED
+color18=#282A2E
+color19=#373B41
+color20=#B4B7B4
+color21=#E0E0E0">~/.termux/colors.properties&&termux-reload-settings
   pkg update&&pkg install -y curl dialog tmux perl micro ranger fastfetch htop ncdu||abort "依赖安装失败"
 elif type apt &>/dev/null;then
   echo "
