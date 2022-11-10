@@ -48,11 +48,20 @@ DIR=/Bot CMD=trss bash <(x
 - [ZeroBot](https://github.com/wdvxdr1123/ZeroBot) <-WS 连接-> [go-cqhttp](https://docs.go-cqhttp.org) <-网络连接-> [QQ 服务器](https://im.qq.com)
 - [go-cqhttp](https://docs.go-cqhttp.org)：提供 QQ 账号管理，收发消息等功能
 - [ZeroBot](https://github.com/wdvxdr1123/ZeroBot)：对消息进行处理，完成目标操作
-- Dialog 对话框：支持 触屏 / 鼠标 操作的交互式对话框
-- [Tmux 终端复用器](https://github.com/tmux/tmux)：支持 触屏 / 鼠标 操作的交互式终端会话
-- [Micro 文本编辑器](https://micro-editor.github.io)：支持 触屏 / 鼠标 操作的终端文本编辑器
-- [Ranger 文件管理器](https://ranger.github.io)：支持 触屏 / 鼠标 操作的终端文件管理器
-- 滚动更新：实时更新到最新版本，修复已知问题并添加更多功能
+
+## 项目特点
+
+- 一键 安装、启动、管理 项目
+- Dialog 交互式对话框
+- [Tmux](https://github.com/tmux/tmux) 终端会话管理
+- [Micro](https://micro-editor.github.io) 文本编辑
+- [Ranger](https://ranger.github.io) 文件管理
+- [htop](https://htop.dev) 进程管理
+- NetHogs 实时网速
+- [Ncdu](https://dev.yorhel.nl/ncdu) 存储分析
+- tar.zst 备份管理
+- 自启动管理
+- 滚动更新
 - 更多功能等待你来提出……
 
 ## 常见问题
