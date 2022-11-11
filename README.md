@@ -77,7 +77,7 @@ DIR=/Bot CMD=trss bash <(x
 - 答：请确认 go-cqhttp 正常运行并启动了 CQ WebSocket 服务器
 
 - 问：address already in use
-- 答：WebSocket 端口被占用，请尝试停止占用进程、重启设备，或修改配置文件，更改 WebSocket 端口
+- 答：端口被占用，请尝试停止占用进程、重启设备，或修改配置文件，更改端口
 
 - 问：[server exited unexpectedly]
 - 答：tmux 进程意外退出，可能是系统资源不足引起的，如果在 Termux 中经常出现，请检查设置：电池优化、后台运行权限
