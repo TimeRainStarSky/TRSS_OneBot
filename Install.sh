@@ -1,11 +1,11 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202211110
+NAME=v1.0.0;VERSION=202211130
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
      $G$NAME$C ($VERSION)$O
 $B————————————————————————————
-      ${G}作者：${C}时雨🌌星空$O"
+      $G作者：$C时雨🌌星空$O"
 abort(){ echo "
 $R! $@$O";exit 1;}
 DIR="${DIR:-$HOME/TRSS_OneBot}"
@@ -18,7 +18,8 @@ elif type pacman &>/dev/null;then
   echo "
 $Y- 正在使用 pacman 安装依赖$O
 "
-  pacman -Syu --noconfirm --needed --overwrite "*" curl dialog tmux perl micro ranger fastfetch fish btop htop nethogs ncdu||abort "依赖安装失败"
+  pacman -Syu --noconfirm --needed --overwrite "*" curl dialog tmux perl micro ranger fastfetch fish btop htop nethogs ncdu ack fzf bat||abort "依赖安装失败"
+  ln -vsf vendor_perl/ack /usr/bin/ack
 elif type pkg &>/dev/null;then
   echo "
 $Y- 正在使用 pkg 安装依赖$O
@@ -51,12 +52,13 @@ color18=#282A2E
 color19=#373B41
 color20=#B4B7B4
 color21=#E0E0E0">~/.termux/colors.properties&&termux-reload-settings
-  pkg update&&pkg install -y curl dialog tmux perl micro ranger fastfetch fish htop ncdu||abort "依赖安装失败"
+  pkg update&&pkg install -y curl dialog tmux perl micro ranger fastfetch fish htop ncdu ack-grep fzf bat||abort "依赖安装失败"
 elif type apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
 "
-  apt update&&apt install -y curl dialog tmux perl micro ranger fish btop htop nethogs ncdu||abort "依赖安装失败"
+  apt update&&apt install -y curl dialog tmux perl micro ranger fish btop htop nethogs ncdu ack-grep fzf batcat||abort "依赖安装失败"
+  ln -vsf batcat "$(dirname "$(command -v batcat)")/bat"
 else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog tmux perl micro 后重试"
 fi
 type locale-gen &>/dev/null&&{ echo "
