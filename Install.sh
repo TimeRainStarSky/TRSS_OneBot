@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202211130
+NAME=v1.0.0;VERSION=202211140
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -72,13 +72,13 @@ download(){ case "$N" in
   2)SERVER="GitHub";URL="https://github.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
   1)SERVER="Gitee";URL="https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
   3)SERVER="Agit";URL="https://agit.ai/TimeRainStarSky/TRSS_OneBot/raw/branch/linux";;
-  4)SERVER="GitLab";URL="https://gitlab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  5)SERVER="Coding";URL="https://trss.coding.net/p/TRSS/d/OneBot/git/raw/linux";;
-  6)SERVER="Aliyun";URL="https://code.aliyun.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  7)SERVER="GitCode";URL="https://gitcode.net/TimeRainStarSky1/TRSS_OneBot/raw/linux";;
+  4)SERVER="Coding";URL="https://trss.coding.net/p/TRSS/d/OneBot/git/raw/linux";;
+  5)SERVER="GitLab";URL="https://gitlab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
+  6)SERVER="GitCode";URL="https://gitcode.net/TimeRainStarSky1/TRSS_OneBot/raw/linux";;
+  7)Server="GitLink";URL="https://gitlink.org.cn/api/TimeRainStarSky/TRSS_OneBot/raw?ref=linux&filepath=";;
   8)SERVER="JiHuLab";URL="https://jihulab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  9)SERVER="Bitbucket";URL="https://bitbucket.org/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  10)SERVER="Jsdelivr";URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@linux"
+  9)SERVER="Jsdelivr";URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@linux";;
+  10)SERVER="Bitbucket";URL="https://bitbucket.org/TimeRainStarSky/TRSS_OneBot/raw/linux"
 esac
 echo "
   正在从 $SERVER 服务器 下载版本信息"
