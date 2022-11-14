@@ -52,13 +52,14 @@ color18=#282A2E
 color19=#373B41
 color20=#B4B7B4
 color21=#E0E0E0">~/.termux/colors.properties&&termux-reload-settings
-  pkg update&&pkg install -y curl dialog tmux perl micro ranger fastfetch fish htop ncdu ack-grep fzf bat||abort "依赖安装失败"
+  pkg update&&pkg install -y curl dialog tmux perl micro ranger fastfetch fish htop ncdu ack-grep fd fzf bat||abort "依赖安装失败"
 elif type apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
 "
-  apt update&&apt install -y curl dialog tmux perl micro ranger fish btop htop nethogs ncdu ack-grep fzf batcat||abort "依赖安装失败"
-  ln -vsf batcat "$(dirname "$(command -v batcat)")/bat"
+  apt update&&apt install -y curl dialog tmux perl micro ranger fish btop htop nethogs ncdu ack-grep fd-find fzf batcat||abort "依赖安装失败"
+  type fd &>/dev/null||ln -vsf fdfind "$(dirname "$(command -v fd)")/fd"
+  type bat &>/dev/null||ln -vsf batcat "$(dirname "$(command -v batcat)")/bat"
 else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog tmux perl micro 后重试"
 fi
 type locale-gen &>/dev/null&&{ echo "
