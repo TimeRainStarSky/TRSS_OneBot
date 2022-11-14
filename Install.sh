@@ -58,7 +58,7 @@ elif type apt &>/dev/null;then
 $Y- 正在使用 apt 安装依赖$O
 "
   apt update&&apt install -y curl dialog tmux perl micro ranger fish btop htop nethogs ncdu ack-grep fd-find fzf bat||abort "依赖安装失败"
-  type fd &>/dev/null||ln -vsf fdfind "$(dirname "$(command -v fd)")/fd"
+  type fd &>/dev/null||ln -vsf fdfind "$(dirname "$(command -v fdfind)")/fd"
   type bat &>/dev/null||ln -vsf batcat "$(dirname "$(command -v batcat)")/bat"
 else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog tmux perl micro 后重试"
 fi
