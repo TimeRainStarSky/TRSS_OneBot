@@ -18,7 +18,7 @@ elif type pacman &>/dev/null;then
   echo "
 $Y- 正在使用 pacman 安装依赖$O
 "
-  pacman -Syu --noconfirm --needed --overwrite "*" curl dialog tmux perl micro ranger fastfetch fish btop htop nethogs ncdu ack fzf bat||abort "依赖安装失败"
+  pacman -Syu --noconfirm --needed --overwrite "*" curl dialog tmux perl micro ranger fastfetch fish btop htop nethogs ncdu ack fd fzf bat||abort "依赖安装失败"
   type ack &>/dev/null||ln -vsf vendor_perl/ack /usr/bin/ack
 elif type pkg &>/dev/null;then
   echo "
