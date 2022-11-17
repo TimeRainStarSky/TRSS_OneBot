@@ -16,7 +16,7 @@ MSYS2ENV=mingw-w64-ucrt-x86_64
 type pacman &>/dev/null&&echo "
 $Y- 正在安装依赖$O
 "||abort "找不到 pacman 命令，请确认安装了正确的 MSYS2 环境"
-pacman -Syu --noconfirm --needed --overwrite "*" curl dialog git tmux perl fish ncdu perl-ack unzip python-pip $MSYS2ENV-fd $MSYS2ENV-fzf $MSYS2ENV-bat&&pip config set global.index-url "https://pypi.mirrors.ustc.edu.cn/simple"&&pip install poetry ranger-fm||abort "依赖安装失败"
+pacman -Syu --noconfirm --needed --overwrite "*" curl dialog git tmux perl fish ncdu perl-ack unzip python-pip $MSYS2ENV-fd $MSYS2ENV-fzf $MSYS2ENV-bat&&pip config set global.index-url "https://pypi.mirrors.ustc.edu.cn/simple"&&pip install ranger-fm||abort "依赖安装失败"
 [ -s /ucrt64/bin/fdo ]||{ mv -vf /ucrt64/bin/fd /ucrt64/bin/fdo;echo -n 'fdo "$@"|tr '"'\\' '/'">/ucrt64/bin/fd;}
 
 Title="TRSS OneBot Install Script $NAME ($VERSION)";BackTitle="作者：时雨🌌星空"
