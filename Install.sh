@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202211150
+NAME=v1.0.0;VERSION=202211160
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -8,10 +8,11 @@ $B——————————————————————————
       $G作者：$C时雨🌌星空$O"
 abort(){ echo "
 $R! $@$O";exit 1;}
+export LANG=zh_CN.UTF-8
 DIR="${DIR:-$HOME/TRSS_OneBot}"
 CMD="${CMD:-tsob}"
 CMDPATH="${CMDPATH:-${PREFIX:-/usr/local}/bin}"
-if type curl dialog tmux perl micro &>/dev/null;then
+if type curl dialog tmux perl &>/dev/null;then
   echo "
 $G- 依赖已安装$O"
 elif type pacman &>/dev/null;then
@@ -60,7 +61,7 @@ $Y- 正在使用 apt 安装依赖$O
   apt update&&apt install -y curl dialog tmux perl micro ranger fish btop htop nethogs ncdu ack-grep fd-find fzf bat catimg||abort "依赖安装失败"
   type fd &>/dev/null||ln -vsf fdfind "$(dirname "$(command -v fdfind)")/fd"
   type bat &>/dev/null||ln -vsf batcat "$(dirname "$(command -v batcat)")/bat"
-else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog tmux perl micro 后重试"
+else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog tmux perl 后重试"
 fi
 type locale-gen &>/dev/null&&{ echo "
 $Y- 正在设置语言$O
@@ -95,7 +96,7 @@ $B  最新版本：$G$NEWNAME$C ($NEWVER)$O
 mkdir -vp "$DIR"
 geturl "$URL/Main.sh">"$DIR/Main.sh"||abort_update "下载失败"
 [ "$(md5sum "$DIR/Main.sh"|head -c 32)" != "$NEWMD5" ]&&abort_update "下载文件校验错误"
-echo -n "exec bash '$DIR/Main.sh' "'"$@"'>"$CMDPATH/$CMD"&&chmod 755 "$CMDPATH/$CMD"||abort "脚本执行命令 $CMDPATH/$CMD 设置失败，手动执行命令：bash '$DIR/Main.sh'"
+mkdir -vp "$CMDPATH"&&echo -n "exec bash '$DIR/Main.sh' "'"$@"'>"$CMDPATH/$CMD"&&chmod 755 "$CMDPATH/$CMD"||abort "脚本执行命令 $CMDPATH/$CMD 设置失败，手动执行命令：bash '$DIR/Main.sh'"
 echo "
 $G- 脚本安装完成，启动命令：$CMD$O";exit;}
 echo "
