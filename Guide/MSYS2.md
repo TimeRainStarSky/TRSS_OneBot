@@ -13,7 +13,7 @@
 2. 安装（首次安装可能会自动关闭，再次启动即可）：
 
 ```
-bash <(curl -L gitee.com/TimeRainStarSky/TRSS_OneBot/raw/main/Install-MSYS2.sh)
+bash <(curl -L gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux/Install-MSYS2.sh)
 ```
 
 3. 启动：`tsob`
