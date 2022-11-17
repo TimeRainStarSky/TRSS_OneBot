@@ -21,6 +21,8 @@ ZeroBot 机器人管理脚本
 
 - [Termux arm64](https://github.com/termux/termux-app) 专用版本见 [main 分支](../../tree/main)
 
+- [Windows](https://microsoft.com/windows) 安装教程 [Guide/MSYS2.md](Guide/MSYS2.md)
+
 2. 安装：
 
 ```
