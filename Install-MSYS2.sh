@@ -1,5 +1,5 @@
 #TRSS OneBot MSYS2 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202211181
+NAME=v1.0.0;VERSION=202211182
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -23,7 +23,8 @@ Title="TRSS OneBot Install Script $NAME ($VERSION)";BackTitle="作者：时雨�
 menubox(){ MenuBox="$1";shift;dialog --title "$Title" --backtitle "$BackTitle $(date "+%F %T.%N")" --ok-button "确认" --cancel-button "取消" --menu "$MenuBox" 0 0 0 "$@" 3>&1 1>&2 2>&3;}
 mktmp(){ TMP="$DIR/tmp"&&rm -rf "$TMP"&&mkdir -p "$TMP"||abort "创建缓存目录失败";}
 geturl(){ curl -L --retry 2 --connect-timeout 5 "$@";}
-gitserver(){ Choose="$(menubox "- 请选择 GitHub 镜像源"\
+gitserver(){ [ -n "$URL" ]&&return
+Choose="$(menubox "- 请选择 GitHub 镜像源"\
   1 "GitHub"\
   2 "GHProxy"\
   3 "GitClone"\
@@ -42,11 +43,11 @@ case "$Choose" in
   7)Server="FastGitRaw";URL="https://raw.fastgit.org";;
   8)Server="FastGitRelease";URL="https://download.fastgit.org"
 esac;}
-gitserver||exit
 
 type ffmpeg &>/dev/null||{ echo "
 $Y- 正在安装 FFmpeg$O
 "
+gitserver||exit
 mktmp;geturl "$URL/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl-shared.zip">"$TMP/ffmpeg.zip"||abort "下载失败"
 unzip -oq "$TMP/ffmpeg.zip" -d "$TMP"||abort "解压失败"
 mv -vf "$TMP/ffmpeg-master-latest-win64-gpl-shared/bin/"* /usr/bin||abort "安装失败";}
