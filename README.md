@@ -17,11 +17,12 @@ ZeroBot 机器人管理脚本
 
 ## 使用教程
 
+- [Windows](https://microsoft.com/windows) 安装教程 [Guide/MSYS2.md](Guide/MSYS2.md)
+- [Linux](https://kernel.org) 安装教程：
+
 1. 准备：[Linux](https://kernel.org) 或 [Termux](https://github.com/termux/termux-app)
 
 - [Termux arm64](https://github.com/termux/termux-app) 专用版本见 [main 分支](../../tree/main)
-
-- [Windows](https://microsoft.com/windows) 安装教程 [Guide/MSYS2.md](Guide/MSYS2.md)
 
 2. 安装：
 
@@ -123,9 +124,9 @@ DIR=/Bot CMD=trss bash <(x
 </details>
 
 ## 相关项目
+[![TRSS OneBot 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_OneBot&show_owner=true)](../../../TRSS_OneBot)
 [![TRSS Liteyuki 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Liteyuki&show_owner=true)](../../../TRSS_Liteyuki)
 [![TRSS Yunzai 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Yunzai&show_owner=true)](../../../TRSS_Yunzai)
 [![TRSS Sagiri 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Sagiri&show_owner=true)](../../../TRSS_Sagiri)
-[![TRSS OneBot 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_OneBot&show_owner=true)](../../../TRSS_OneBot)
 [![TRSS Amiya 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Amiya&show_owner=true)](../../../TRSS_Amiya)
 [![TRSS Zhenxun 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_Zhenxun&show_owner=true)](../../../TRSS_Zhenxun)
