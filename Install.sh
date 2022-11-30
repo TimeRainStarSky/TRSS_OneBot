@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202211230
+NAME=v1.0.0;VERSION=202211300
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -19,7 +19,7 @@ elif type pacman &>/dev/null;then
   echo "
 $Y- 正在使用 pacman 安装依赖$O
 "
-  pacman -Syu --noconfirm --needed --overwrite "*" curl dialog tmux perl micro ranger fastfetch unzip fish btop htop nethogs ncdu ack fd fzf bat catimg||abort "依赖安装失败"
+  pacman -Syu --noconfirm --needed --overwrite "*" curl dialog tmux perl micro ranger fastfetch unzip fish btop htop nethogs ncdu ack fd fzf bat catimg lolcat||abort "依赖安装失败"
   type ack &>/dev/null||ln -vsf vendor_perl/ack /usr/bin/ack
 elif type pkg &>/dev/null;then
   echo "
@@ -58,10 +58,11 @@ elif type apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
 "
-  apt update&&apt install -y curl dialog tmux perl micro ranger neofetch unzip fish btop htop nethogs ncdu ack-grep fd-find fzf bat catimg||abort "依赖安装失败"
+  apt update&&apt install -y curl dialog tmux perl micro ranger neofetch unzip fish btop htop nethogs ncdu ack-grep fd-find fzf bat catimg lolcat||abort "依赖安装失败"
   type fd &>/dev/null||ln -vsf fdfind "$(dirname "$(command -v fdfind)")/fd"
   type bat &>/dev/null||ln -vsf batcat "$(dirname "$(command -v batcat)")/bat"
   type fastfetch &>/dev/null||ln -vsf neofetch "$(dirname "$(command -v neofetch)")/fastfetch"
+  type lolcat &>/dev/null||ln -vsf ../games/lolcat /usr/bin/lolcat
 else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog tmux perl 后重试"
 fi
 type locale-gen &>/dev/null&&{ echo "
