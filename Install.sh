@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202211300
+NAME=v1.0.0;VERSION=202212010
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -53,7 +53,8 @@ color18=#282A2E
 color19=#373B41
 color20=#B4B7B4
 color21=#E0E0E0">~/.termux/colors.properties&&termux-reload-settings
-  pkg update&&pkg install -y curl dialog tmux perl micro ranger fastfetch unzip fish htop ncdu ack-grep fd fzf bat catimg||abort "依赖安装失败"
+  pkg update&&pkg install -y curl dialog tmux perl micro ranger fastfetch unzip fish htop ncdu ack-grep fd fzf bat catimg ruby||abort "依赖安装失败"
+  gem install lolcat
 elif type apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
