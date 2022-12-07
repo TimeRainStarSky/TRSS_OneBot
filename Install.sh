@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202212010
+NAME=v1.0.0;VERSION=202212080
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -12,6 +12,12 @@ export LANG=zh_CN.UTF-8
 DIR="${DIR:-$HOME/TRSS_OneBot}"
 CMD="${CMD:-tsob}"
 CMDPATH="${CMDPATH:-${PREFIX:-/usr/local}/bin}"
+type locale-gen &>/dev/null&&{ echo "
+$Y- 正在设置语言$O
+"
+sed -i 's/#.*zh_CN\.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen&&
+locale-gen||echo "
+$R! 语言设置失败$O";}
 if type curl dialog tmux perl &>/dev/null;then
   echo "
 $G- 依赖已安装$O"
@@ -66,11 +72,6 @@ $Y- 正在使用 apt 安装依赖$O
   type lolcat &>/dev/null||ln -vsf ../games/lolcat /usr/bin/lolcat
 else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog tmux perl 后重试"
 fi
-type locale-gen &>/dev/null&&{ echo "
-$Y- 正在设置语言$O
-"
-sed -i 's/#.*zh_CN\.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen&&locale-gen||echo "
-$R! 语言设置失败$O";}
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt 10 ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
 download(){ case "$N" in
