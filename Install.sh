@@ -1,5 +1,5 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202212080
+NAME=v1.0.0;VERSION=202212090
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -25,8 +25,7 @@ elif type pacman &>/dev/null;then
   echo "
 $Y- 正在使用 pacman 安装依赖$O
 "
-  pacman -Syu --noconfirm --needed --overwrite "*" curl dialog tmux perl micro ranger fastfetch unzip fish btop htop nethogs ncdu ack fd fzf bat catimg lolcat||abort "依赖安装失败"
-  type ack &>/dev/null||ln -vsf vendor_perl/ack /usr/bin/ack
+  pacman -Syu --noconfirm --needed --overwrite "*" curl dialog tmux perl micro ranger fastfetch unzip fish btop htop nethogs ncdu ripgrep fd fzf bat catimg lolcat||abort "依赖安装失败"
 elif type pkg &>/dev/null;then
   echo "
 $Y- 正在使用 pkg 安装依赖$O
@@ -59,13 +58,13 @@ color18=#282A2E
 color19=#373B41
 color20=#B4B7B4
 color21=#E0E0E0">~/.termux/colors.properties&&termux-reload-settings
-  pkg update&&pkg install -y curl dialog tmux perl micro ranger fastfetch unzip fish htop ncdu ack-grep fd fzf bat catimg ruby||abort "依赖安装失败"
+  pkg update&&pkg install -y curl dialog tmux perl micro ranger fastfetch unzip fish htop ncdu ripgrep fd fzf bat catimg ruby||abort "依赖安装失败"
   gem install lolcat
 elif type apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
 "
-  apt update&&apt install -y curl dialog tmux perl micro ranger neofetch unzip fish btop htop nethogs ncdu ack-grep fd-find fzf bat catimg lolcat||abort "依赖安装失败"
+  apt update&&apt install -y curl dialog tmux perl micro ranger neofetch unzip fish btop htop nethogs ncdu ripgrep fd-find fzf bat catimg lolcat||abort "依赖安装失败"
   type fd &>/dev/null||ln -vsf fdfind "$(dirname "$(command -v fdfind)")/fd"
   type bat &>/dev/null||ln -vsf batcat "$(dirname "$(command -v batcat)")/bat"
   type fastfetch &>/dev/null||ln -vsf neofetch "$(dirname "$(command -v neofetch)")/fastfetch"
@@ -75,16 +74,16 @@ fi
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt 10 ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
 download(){ case "$N" in
-  2)SERVER="GitHub";URL="https://github.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  1)SERVER="Gitee";URL="https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  3)SERVER="Agit";URL="https://agit.ai/TimeRainStarSky/TRSS_OneBot/raw/branch/linux";;
-  4)SERVER="Coding";URL="https://trss.coding.net/p/TRSS/d/OneBot/git/raw/linux";;
-  5)SERVER="GitLab";URL="https://gitlab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  6)SERVER="GitCode";URL="https://gitcode.net/TimeRainStarSky1/TRSS_OneBot/raw/linux";;
-  7)Server="GitLink";URL="https://gitlink.org.cn/api/TimeRainStarSky/TRSS_OneBot/raw?ref=linux&filepath=";;
-  8)SERVER="JiHuLab";URL="https://jihulab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  9)SERVER="Jsdelivr";URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@linux";;
-  10)SERVER="Bitbucket";URL="https://bitbucket.org/TimeRainStarSky/TRSS_OneBot/raw/linux"
+  2)SERVER="GitHub" URL="https://github.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
+  1)SERVER="Gitee" URL="https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
+  3)SERVER="Agit" URL="https://agit.ai/TimeRainStarSky/TRSS_OneBot/raw/branch/linux";;
+  4)SERVER="Coding" URL="https://trss.coding.net/p/TRSS/d/OneBot/git/raw/linux";;
+  5)SERVER="GitLab" URL="https://gitlab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
+  6)SERVER="GitCode" URL="https://gitcode.net/TimeRainStarSky1/TRSS_OneBot/raw/linux";;
+  7)Server="GitLink" URL="https://gitlink.org.cn/api/TimeRainStarSky/TRSS_OneBot/raw?ref=linux&filepath=";;
+  8)SERVER="JiHuLab" URL="https://jihulab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
+  9)SERVER="Jsdelivr" URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@linux";;
+  10)SERVER="Bitbucket" URL="https://bitbucket.org/TimeRainStarSky/TRSS_OneBot/raw/linux"
 esac
 echo "
   正在从 $SERVER 服务器 下载版本信息"

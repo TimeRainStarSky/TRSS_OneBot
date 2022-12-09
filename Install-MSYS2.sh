@@ -1,5 +1,5 @@
 #TRSS OneBot MSYS2 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202212010
+NAME=v1.0.0;VERSION=202212090
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -16,8 +16,9 @@ MSYS2ENV=mingw-w64-ucrt-x86_64
 type pacman &>/dev/null&&echo "
 $Y- 正在安装依赖$O
 "||abort "找不到 pacman 命令，请确认安装了正确的 MSYS2 环境"
-pacman -Syu --noconfirm --needed --overwrite "*" curl dialog git tmux perl neofetch unzip fish ncdu perl-ack $MSYS2ENV-fd $MSYS2ENV-fzf $MSYS2ENV-bat ruby||abort "依赖安装失败"
+pacman -Syu --noconfirm --needed --overwrite "*" curl dialog git tmux perl neofetch unzip fish ncdu $MSYS2ENV-ripgrep $MSYS2ENV-fd $MSYS2ENV-fzf $MSYS2ENV-bat ruby||abort "依赖安装失败"
 type fastfetch &>/dev/null||ln -vsf neofetch "$(dirname "$(command -v neofetch)")/fastfetch"
+[ -s /usr/bin/rg ]||echo -n 'exec /ucrt64/bin/rg "$@"'>/usr/bin/rg
 [ -s /ucrt64/bin/fd ]&&{ mv -vf /ucrt64/bin/fd /ucrt64/bin/fdo;}
 [ -s /usr/bin/fd ]||echo -n '/ucrt64/bin/fdo "$@"|cygpath -mf -'>/usr/bin/fd
 [ -s /usr/bin/fzf ]||echo -n 'exec /ucrt64/bin/fzf "$@"'>/usr/bin/fzf
@@ -39,14 +40,14 @@ Choose="$(menubox "- 请选择 GitHub 镜像源"\
   7 "FastGitRaw"\
   8 "FastGitRelease")"||return
 case "$Choose" in
-  1)Server="GitHub";URL="https://github.com";;
-  2)Server="GHProxy";URL="https://ghproxy.com/github.com";;
-  3)Server="GitClone";URL="https://gitclone.com/github.com";;
-  4)Server="GHApi";URL="https://gh.api.99988866.xyz/github.com";;
-  5)Server="abskoop";URL="https://github.abskoop.workers.dev/github.com";;
-  6)Server="FastGit";URL="https://hub.fastgit.xyz";;
-  7)Server="FastGitRaw";URL="https://raw.fastgit.org";;
-  8)Server="FastGitRelease";URL="https://download.fastgit.org"
+  1)Server="GitHub" URL="https://github.com";;
+  2)Server="GHProxy" URL="https://ghproxy.com/github.com";;
+  3)Server="GitClone" URL="https://gitclone.com/github.com";;
+  4)Server="GHApi" URL="https://gh.api.99988866.xyz/github.com";;
+  5)Server="abskoop" URL="https://github.abskoop.workers.dev/github.com";;
+  6)Server="FastGit" URL="https://hub.fastgit.xyz";;
+  7)Server="FastGitRaw" URL="https://raw.fastgit.org";;
+  8)Server="FastGitRelease" URL="https://download.fastgit.org"
 esac;}
 
 type ffmpeg &>/dev/null||{ echo "
@@ -60,16 +61,16 @@ mv -vf "$TMP/"*/bin/* /usr/bin||abort "安装失败";}
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt 10 ]&&{ let N++;download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
 download(){ case "$N" in
-  2)SERVER="GitHub";URL="https://github.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  1)SERVER="Gitee";URL="https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  3)SERVER="Agit";URL="https://agit.ai/TimeRainStarSky/TRSS_OneBot/raw/branch/linux";;
-  4)SERVER="Coding";URL="https://trss.coding.net/p/TRSS/d/OneBot/git/raw/linux";;
-  5)SERVER="GitLab";URL="https://gitlab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  6)SERVER="GitCode";URL="https://gitcode.net/TimeRainStarSky1/TRSS_OneBot/raw/linux";;
-  7)Server="GitLink";URL="https://gitlink.org.cn/api/TimeRainStarSky/TRSS_OneBot/raw?ref=linux&filepath=";;
-  8)SERVER="JiHuLab";URL="https://jihulab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
-  9)SERVER="Jsdelivr";URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@linux";;
-  10)SERVER="Bitbucket";URL="https://bitbucket.org/TimeRainStarSky/TRSS_OneBot/raw/linux"
+  2)SERVER="GitHub" URL="https://github.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
+  1)SERVER="Gitee" URL="https://gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
+  3)SERVER="Agit" URL="https://agit.ai/TimeRainStarSky/TRSS_OneBot/raw/branch/linux";;
+  4)SERVER="Coding" URL="https://trss.coding.net/p/TRSS/d/OneBot/git/raw/linux";;
+  5)SERVER="GitLab" URL="https://gitlab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
+  6)SERVER="GitCode" URL="https://gitcode.net/TimeRainStarSky1/TRSS_OneBot/raw/linux";;
+  7)Server="GitLink" URL="https://gitlink.org.cn/api/TimeRainStarSky/TRSS_OneBot/raw?ref=linux&filepath=";;
+  8)SERVER="JiHuLab" URL="https://jihulab.com/TimeRainStarSky/TRSS_OneBot/raw/linux";;
+  9)SERVER="Jsdelivr" URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/TRSS_OneBot@linux";;
+  10)SERVER="Bitbucket" URL="https://bitbucket.org/TimeRainStarSky/TRSS_OneBot/raw/linux"
 esac
 echo "
   正在从 $SERVER 服务器 下载版本信息"
