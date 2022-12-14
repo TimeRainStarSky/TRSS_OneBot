@@ -66,10 +66,10 @@ $Y- 正在使用 apt 安装依赖$O
   type bat &>/dev/null||ln -vsf batcat "$(dirname "$(command -v batcat)")/bat"
   type fastfetch &>/dev/null||ln -vsf neofetch "$(dirname "$(command -v neofetch)")/fastfetch"
   type lolcat &>/dev/null||ln -vsf ../games/lolcat /usr/bin/lolcat
-elif type curl dialog tmux perl rg &>/dev/null;then
+elif type curl dialog tmux perl rg fd &>/dev/null;then
   echo "
 $G- 依赖已安装$O"
-else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog tmux perl ripgrep 后重试"
+else abort "不支持自动安装依赖的 Linux 发行版，请自行安装依赖：curl dialog tmux perl ripgrep fd 后重试"
 fi
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt 10 ]&&{ ((N++));download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
