@@ -15,7 +15,13 @@ ZeroBot 机器人管理脚本
 
 </div>
 
-## 使用教程
+## 使用文档
+
+- [Vercel](https://TRSS-Script.vercel.app)
+- [GitHub](https://TimeRainStarSky.github.io/TRSS_Script)
+- [Gitee](https://TimeRainStarSky.gitee.io/TRSS_Script)
+
+## 安装教程
 
 - [Windows](https://microsoft.com/windows) 安装教程 [Guide/MSYS2.md](Guide/MSYS2.md)
 - [Linux](https://kernel.org) 安装教程：
@@ -45,34 +51,6 @@ DIR=/Bot CMD=trss bash <(x
 ```
 
 </details>
-
-## 使用说明
-
-- [ZeroBot](https://github.com/wdvxdr1123/ZeroBot) <-WS 连接-> [go-cqhttp](https://docs.go-cqhttp.org) <-网络连接-> [QQ 服务器](https://im.qq.com)
-- [go-cqhttp](https://docs.go-cqhttp.org)：提供 QQ 账号管理，收发消息等功能
-- [ZeroBot](https://github.com/wdvxdr1123/ZeroBot)：对消息进行处理，完成目标操作
-
-## 项目特点
-
-- 一键 安装、启动、管理 项目
-- Dialog 交互式对话框
-- [tmux](https://github.com/tmux/tmux) 终端会话管理
-- [micro](https://micro-editor.github.io) 文本编辑
-- [ranger](https://ranger.github.io) 文件管理
-- [tar](https://gnu.org/software/tar).[zst](https://facebook.github.io/zstd) 备份管理
-- [fish](https://fishshell.com) 交互式 Shell
-- [aliyunpan](https://github.com/tickstep/aliyunpan) 阿里云盘
-- [BaiduPCS-Go](https://github.com/qjfoidnh/BaiduPCS-Go) 百度网盘
-- [btop](https://github.com/aristocratos/btop) 资源监视
-- [htop](https://htop.dev) 进程管理
-- [NetHogs](https://github.com/raboof/nethogs) 实时网速
-- [Ncdu](https://dev.yorhel.nl/ncdu) 存储分析
-- [ack](https://beyondgrep.com) 文本搜索
-- [fzf](https://github.com/junegunn/fzf) 文件搜索
-- [lolcat](https://github.com/busyloop/lolcat) 🌈彩虹输出
-- 自启动管理
-- 滚动更新
-- 更多功能等待你来提出……
 
 ## 常见问题
 

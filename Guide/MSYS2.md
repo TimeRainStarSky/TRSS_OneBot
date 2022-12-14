@@ -1,8 +1,6 @@
 该教程用于在 Windows MSYS2 中安装 TRSS OneBot
 
-[![访问量](https://visitor-badge.glitch.me/badge?page_id=TimeRainStarSky.TRSS_OneBot-MSYS2&right_color=red&left_text=访%20问%20量)](https://msys2.org)
-
-[![访问量](https://profile-counter.glitch.me/TimeRainStarSky-TRSS_OneBot-MSYS2/count.svg)](https://msys2.org)
+[![访问量](https://visitor-badge.glitch.me/badge?page_id=TimeRainStarSky.TRSS_OneBot-MSYS2&right_color=red&left_text=访%20问%20量) ![访问量](https://profile-counter.glitch.me/TimeRainStarSky-TRSS_OneBot-MSYS2/count.svg)](https://msys2.org)
 
 ---
 
