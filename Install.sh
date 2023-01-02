@@ -1,6 +1,6 @@
 #TRSS OneBot 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202212310
-R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m"
+NAME=v1.0.0;VERSION=202301020
+R="[1;31m" G="[1;32m" Y="[1;33m" C="[1;36m" B="[1;m" O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
      $G$NAME$C ($VERSION)$O
@@ -55,13 +55,16 @@ color18=#282A2E
 color19=#373B41
 color20=#B4B7B4
 color21=#E0E0E0">~/.termux/colors.properties&&termux-reload-settings
-  pkg update&&pkg install -y curl dialog tmux tmate perl micro ranger fastfetch unzip fish htop ncdu ripgrep fd fzf bat catimg ruby||abort "依赖安装失败"
+  pkg update&&
+  pkg install -y root-repo x11-repo&&
+  pkg install -y curl dialog tmux tmate perl micro ranger fastfetch unzip fish htop nethogs ncdu ripgrep fd fzf bat catimg ruby||abort "依赖安装失败"
   gem install lolcat
 elif type apt &>/dev/null;then
   echo "
 $Y- 正在使用 apt 安装依赖$O
 "
-  apt update&&apt install -y curl dialog tmux tmate perl micro ranger neofetch unzip fish btop htop nethogs ncdu ripgrep fd-find fzf bat catimg lolcat||abort "依赖安装失败"
+  apt update&&
+  apt install -y curl dialog tmux tmate perl micro ranger neofetch unzip fish btop htop nethogs ncdu ripgrep fd-find fzf bat catimg lolcat||abort "依赖安装失败"
   type fd &>/dev/null||ln -vsf fdfind "$(dirname "$(command -v fdfind)")/fd"
   type bat &>/dev/null||ln -vsf batcat "$(dirname "$(command -v batcat)")/bat"
   type fastfetch &>/dev/null||ln -vsf neofetch "$(dirname "$(command -v neofetch)")/fastfetch"
@@ -103,4 +106,7 @@ mkdir -vp "$CMDPATH"&&echo -n "exec bash '$DIR/Main.sh' "'"$@"'>"$CMDPATH/$CMD"&
 echo "
 $G- 脚本安装完成，启动命令：$CMD$O";exit;}
 echo "
-$Y- 正在下载脚本$O";geturl(){ curl -L --retry 2 --connect-timeout 5 "$@";};N=1;download
+$Y- 正在下载脚本$O"
+geturl(){ curl -L --retry 2 --connect-timeout 5 "$@";}
+N=1
+download
