@@ -1,5 +1,5 @@
 #TRSS OneBot MSYS2 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202301150
+NAME=v1.0.0;VERSION=202301151
 R="[1;31m" G="[1;32m" Y="[1;33m" C="[1;36m" B="[1;m" O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -25,7 +25,7 @@ type fastfetch &>/dev/null||ln -vsf neofetch "$(dirname "$(command -v neofetch)"
 [ -s /usr/bin/fzf ]||echo -n 'exec /ucrt64/bin/fzf "$@"'>/usr/bin/fzf
 [ -s /ucrt64/bin/bat ]&&mv -vf /ucrt64/bin/bat /ucrt64/bin/bato
 [ -s /usr/bin/bat ]||echo -n 'USERPROFILE="$HOMEDRIVE$HOMEPATH" exec /ucrt64/bin/bato "$@"'>/usr/bin/bat
-[ -s /usr/bin/lolcat ]||{ gem install lolcat&&echo exec "$HOME/.local/share/gem/ruby/"*/bin/lolcat '"$@"'>/usr/bin/lolcat;}
+gem install --no-user-install lolcat
 
 Title="TRSS OneBot Install Script $NAME ($VERSION)";BackTitle="作者：时雨🌌星空"
 menubox(){ MenuBox="$1";shift;dialog --title "$Title" --backtitle "$BackTitle $(date "+%F %T.%N")" --ok-button "确认" --cancel-button "取消" --menu "$MenuBox" 0 0 0 "$@" 3>&1 1>&2 2>&3;}
