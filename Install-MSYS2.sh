@@ -1,5 +1,5 @@
 #TRSS OneBot MSYS2 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202301300
+NAME=v1.0.0;VERSION=202302040
 R="[1;31m" G="[1;32m" Y="[1;33m" C="[1;36m" B="[1;m" O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -33,23 +33,17 @@ mktmp(){ TMP="$DIR/tmp"&&rm -rf "$TMP"&&mkdir -p "$TMP"||abort "缓存目录创�
 geturl(){ curl -L --retry 2 --connect-timeout 5 "$@";}
 gitserver(){ [ -n "$URL" ]&&return
 Choose="$(menubox "- 请选择 GitHub 镜像源"\
-  1 "GitHub"\
-  2 "GHProxy"\
+  1 "GitHub（国外推荐）"\
+  2 "GHProxy（国内推荐）"\
   3 "GitClone"\
   4 "GHApi"\
-  5 "abskoop"\
-  6 "FastGit"\
-  7 "FastGitRaw"\
-  8 "FastGitRelease")"||return
+  5 "abskoop")"||return
 case "$Choose" in
   1)Server="GitHub" URL="https://github.com";;
   2)Server="GHProxy" URL="https://ghproxy.com/github.com";;
   3)Server="GitClone" URL="https://gitclone.com/github.com";;
   4)Server="GHApi" URL="https://gh.api.99988866.xyz/github.com";;
-  5)Server="abskoop" URL="https://github.abskoop.workers.dev/github.com";;
-  6)Server="FastGit" URL="https://hub.fastgit.xyz";;
-  7)Server="FastGitRaw" URL="https://raw.fastgit.org";;
-  8)Server="FastGitRelease" URL="https://download.fastgit.org"
+  5)Server="abskoop" URL="https://github.abskoop.workers.dev/github.com"
 esac;}
 
 type ffmpeg &>/dev/null||{ echo "
