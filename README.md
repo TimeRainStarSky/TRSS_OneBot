@@ -1,6 +1,10 @@
 <div align="center">
 
-[![苏半夏](Picture/苏半夏.png)](https://moegirl.org.cn/苏半夏)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="Picture/苏半夏冬.png">
+  <source media="(prefers-color-scheme: light)" srcset="Picture/苏半夏.png">
+  <img alt="苏半夏" src="https://moegirl.org.cn/苏半夏">
+</picture>
 
 # TRSS OneBot
 
@@ -21,37 +25,6 @@ ZeroBot 机器人管理脚本
 - [🔼 Vercel](https://TRSS-Script.Vercel.app)
 - [🐱 GitHub](https://TimeRainStarSky.GitHub.io/TRSS_Script)
 - [🇬 Gitee](https://Gitee.com/TimeRainStarSky/TRSS_Script)
-
-## 安装教程
-
-- [Windows](https://microsoft.com/windows) 安装教程 [Guide/MSYS2.md](Guide/MSYS2.md)
-- [Linux](https://kernel.org) 安装教程：
-
-1. 准备：[Linux](https://kernel.org) 或 [Termux](https://github.com/termux/termux-app)
-
-- [Termux arm64](https://github.com/termux/termux-app) 专用版本见 [main 分支](../../tree/main)
-
-2. 安装：
-
-```
-bash <(curl -L gitee.com/TimeRainStarSky/TRSS_OneBot/raw/linux/Install.sh)
-```
-
-3. 启动：`tsob`
-
-视频教程：<https://b23.tv/av983453309>
-
-<details><summary>自定义功能</summary>
-
-自定义 安装路径 `DIR` 和 启动命令 `CMD`（可用于多开）
-
-举例：将脚本安装至 `/Bot` 启动命令 `trss`
-
-```
-DIR=/Bot CMD=trss bash <(x
-```
-
-</details>
 
 ## 常见问题
 
