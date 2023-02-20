@@ -1,5 +1,5 @@
 #TRSS OneBot MSYS2 安装脚本 作者：时雨🌌星空
-NAME=v1.0.0;VERSION=202302180
+NAME=v1.0.0;VERSION=202302200
 R="[1;31m" G="[1;32m" Y="[1;33m" C="[1;36m" B="[1;m" O="[m"
 echo "$B————————————————————————————
 $R TRSS$Y OneBot$G Install$C Script$O
@@ -8,6 +8,7 @@ $B——————————————————————————
       $G作者：$C时雨🌌星空$O"
 abort(){ echo "
 $R! $@$O";exit 1;}
+[ -s /win/PATH ]&&PATH="$(</win/PATH)$PATH"
 export LANG=zh_CN.UTF-8 MSYS=winsymlinks USERPROFILE="$(cygpath -w "$HOME")"
 export APPDATA="$USERPROFILE\\AppData\\Roaming" LOCALAPPDATA="$USERPROFILE\\AppData\\Local"
 DIR="${DIR:-$HOME/TRSS_OneBot}"
@@ -27,9 +28,7 @@ type fastfetch &>/dev/null||ln -vsf neofetch "$(dirname "$(command -v neofetch)"
 
 mktmp(){ TMP="$DIR/tmp"&&rm -rf "$TMP"&&mkdir -p "$TMP"||abort "缓存目录创建失败";}
 geturl(){ curl -L --retry 2 --connect-timeout 5 "$@";}
-mkcmd(){ ln -vsf "$2" "/usr/bin/$1"&&
-echo -n "@echo off
-\"$(cygpath -w "$2")\" %*">"/usr/bin/$1.cmd";}
+mkpath(){ PATH="$*:$PATH";echo -n "$*:">>/win/PATH;}
 git_clone(){ git clone --depth 1 --single-branch "$@";}
 
 type ffmpeg &>/dev/null||{ echo "
@@ -38,9 +37,7 @@ $Y- 正在安装 FFmpeg$O
 rm -rf /win/ffmpeg&&
 mkdir -vp /win&&
 git_clone "https://gitee.com/TimeRainStarSky/ffmpeg-windows" /win/ffmpeg||abort "下载失败"
-mkcmd ffmpeg /win/ffmpeg/bin/ffmpeg&&
-mkcmd ffplay /win/ffmpeg/bin/ffplay&&
-mkcmd ffprobe /win/ffmpeg/bin/ffprobe||abort "安装失败";}
+mkpath /win/ffmpeg/bin||abort "安装失败";}
 
 abort_update(){ echo "
 $R! $@$O";[ "$N" -lt 10 ]&&{ ((N++));download;}||abort "脚本下载失败，请检查网络，并尝试重新下载";}
