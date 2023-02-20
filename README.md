@@ -55,29 +55,11 @@ ZeroBot 机器人管理脚本
 
 - QQ 群组：[211414032](https://jq.qq.com/?k=QU1xGLEB)
 
-### 时雨🌌星空
-
-- GitHub：[TimeRainStarSky](https://github.com/TimeRainStarSky)
-- 酷安：[时雨丶星空](https://coolapk.com/u/2650948)
-- QQ：[2536554304](https://qm.qq.com/cgi-bin/qm/qr?k=x8LtlP8vwZs7qLwmsbCsyLoAHy7Et1Pj)
-- Telegram：[TimeRainStarSky](https://t.me/TimeRainStarSky)
-
 ## 赞助支持
 
 - 爱发电：<https://afdian.net/a/TimeRainStarSky>
 - Partme：<https://partme.com/TimeRainStarSky>
 - 感谢名单：<https://github.com/TimeRainStarSky/SponsorList>
-
-## 界面展示
-
-<details><summary>展开</summary>
-
-[![主界面](Picture/Main.png)](https://github.com/TimeRainStarSky/TRSS_OneBot)
-[![go-cqhttp](Picture/go-cqhttp.png)](https://docs.go-cqhttp.org)
-[![ZeroBot-Plugin](Picture/ZeroBot-Plugin.png)](https://github.com/FloatTech/ZeroBot-Plugin)
-[![PaimengBot](Picture/PaimengBot.png)](https://richeyjang.github.io/PaimengBot)
-
-</details>
 
 ## 相关项目
 [![TRSS OneBot 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_OneBot&show_owner=true)](../../../TRSS_OneBot)
