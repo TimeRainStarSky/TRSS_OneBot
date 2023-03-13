@@ -57,9 +57,9 @@ ZeroBot 机器人管理脚本
 
 ## 赞助支持
 
-- 爱发电：<https://afdian.net/a/TimeRainStarSky>
-- Partme：<https://partme.com/TimeRainStarSky>
-- 感谢名单：<https://github.com/TimeRainStarSky/SponsorList>
+- [爱发电](https://afdian.net/a/TimeRainStarSky)
+- [Partme](https://partme.com/TimeRainStarSky)
+- [感谢名单](https://github.com/TimeRainStarSky/SponsorList)
 
 ## 相关项目
 [![TRSS OneBot 管理脚本](https://github-readme-stats.vercel.app/api/pin/?username=TimeRainStarSky&repo=TRSS_OneBot&show_owner=true)](../../../TRSS_OneBot)
